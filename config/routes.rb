@@ -24,6 +24,7 @@ Rubeque::Application.routes.draw do
   match 'help' => 'static#help', :via => :get, :as => :help
   match 'problem_submission' => "static#problem_submission", via: :get, as: "submission_help"
   match "admin" => "static#admin", as: "admin"
+  match "ad" => "static#ad", as: "ad"
 
   get "cheating", as: :cheating, controller: :cheating, action: :index
 
