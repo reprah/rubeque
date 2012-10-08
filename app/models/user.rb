@@ -63,9 +63,15 @@ class User
   def solved_problems
     @solved_problems ||= Hash[solutions.map{|solution| [solution.problem_id,solution.score]}]
   end
-  
+
   def solved_problem_scores
     solved_problems
+  end
+
+  def first_unsolved_problem
+    problems = Problem.asc(:order_number).uniq
+    solutions = self.solutions.map(&:problem)
+    (problems - solutions).first
   end
 
   def to_s

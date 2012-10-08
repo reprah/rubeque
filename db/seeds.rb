@@ -7,8 +7,7 @@ order_number = 0
 
 ######################################################################################################################
 
-Problem.create!(#_id: 1,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "The Truth",
                 tag_list: "booleans",
                 instructions: "Here's a hint: true equals true.",
@@ -18,8 +17,7 @@ Problem.create!(#_id: 1,
 
 ######################################################################################################################
 
-Problem.create!(#_id: 1,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "Hello World",
                 instructions: "",
                 tag_list: "strings",
@@ -29,8 +27,7 @@ Problem.create!(#_id: 1,
 
 ######################################################################################################################
 
-Problem.create!(#_id: 2,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "Nil Values",
                 instructions: "Enter in a boolean value for what #nil? will return.",
                 tag_list: "nil, booleans",
@@ -40,8 +37,7 @@ Problem.create!(#_id: 2,
 
 ######################################################################################################################
 
-Problem.create!(#_id: 3,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "Reverse",
                 instructions: "What happens when you apply reverse? Hint: don't forget to quote your strings!",
                 tag_list: "strings",
@@ -51,8 +47,7 @@ Problem.create!(#_id: 3,
 
 ######################################################################################################################
 
-Problem.create!(#_id: 3,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "Maximum",
                 instructions: "Find the max in a given set of numbers",
                 tag_list: "numbers",
@@ -67,19 +62,18 @@ assert_equal maximum([2, 42, 22, 02]), 42
 assert_equal maximum([-2, 0, 33, 304, 2, -2]), 304
 assert_equal maximum([1]), 1
 code_block
-                )
+               )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 4,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "FizzBuzz",
                 instructions: "If a number is divisible by 3, return \"Fizz\". If a number is divisible by 5, return \"Buzz\". If a number
                                is divisible by 3 and 5, return \"FizzBuzz\"",
                 tag_list: "arithmetic, strings",
                 approved: true,
                 order_number: (order_number+=1),
-                code: <<-eos
+                code: <<-code_block
 def fizzbuzz(x)
   ___
 end
@@ -88,13 +82,12 @@ assert_equal fizzbuzz(3), "Fizz"
 assert_equal fizzbuzz(50), "Buzz"
 assert_equal fizzbuzz(15), "FizzBuzz"
 assert_equal fizzbuzz(5175), "FizzBuzz"
-eos
+code_block
                )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 5,
-                difficulty: 0,
+Problem.create!(difficulty: 0,
                 title: "Map",
                 instructions: "How would you create an array that contains the squares of all elements in a range?",
                 tag_list: "enumerables",
@@ -340,8 +333,7 @@ code_block
 
 ######################################################################################################################
 
-Problem.create!(#_id: 6,
-                difficulty: 1,
+Problem.create!(difficulty: 1,
                 title: "Reverse Each Word",
                 instructions: "Write a method that takes a sentence and returns it with each word reversed in place.",
                 tag_list: "strings, enumerables",
@@ -358,8 +350,7 @@ code_block
 
 ######################################################################################################################
 
-Problem.create!(#_id: 7,
-                difficulty: 1,
+Problem.create!(difficulty: 1,
                 title: "Your Favorite and Mine, Fibonacci!",
                 instructions: "Write a method that handles Fibonacci sequences. Have it return the nth item in the Fibonacci sequence.  
                   Hint: The first item in the sequence is 0.",
@@ -457,15 +448,14 @@ code_block
 
 ######################################################################################################################
 
-Problem.create!(#_id: 8,
-               difficulty: 2,
-               title: "Hello? Yes, This Is Dog",
-               instructions: 'Write a method to validate some strings that could potentially represent phone numbers. See if you can do it with a
-                 single regular expression.',
-               approved: true,
-               order_number: (order_number+=1),
-               tag_list: "strings, regular expressions",
-               code: <<-eos
+Problem.create!(difficulty: 2,
+                title: "Hello? Yes, This Is Dog",
+                instructions: 'Write a method to validate some strings that could potentially represent phone numbers. See if you can do it with a
+                  single regular expression.',
+                approved: true,
+                order_number: (order_number+=1),
+                tag_list: "strings, regular expressions",
+                code: <<-code_block
 def phone_number?(num)
   ___
 end
@@ -477,19 +467,18 @@ assert_equal phone_number?("(555) 555-5555"), true
 assert_equal phone_number?("(555) 555-555"), false
 assert_equal phone_number?("555-555-555"), true
 assert_equal phone_number?("(555-555-555"), false
-eos
+code_block
                )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 8,
-               difficulty: 2,
-               title: "Prime Factors",
-               instructions: 'Find all of the prime factors for a given number',
-               approved: true,
-               order_number: (order_number+=1),
-               tag_list: "arithmetic",
-               code: <<-eos
+Problem.create!(difficulty: 2,
+                title: "Prime Factors",
+                instructions: 'Find all of the prime factors for a given number',
+                approved: true,
+                order_number: (order_number+=1),
+                tag_list: "arithmetic",
+                code: <<-code_block
 def prime_factors(num)
   ___
 end
@@ -497,38 +486,36 @@ end
 assert_equal prime_factors(102), [2, 3, 17]
 assert_equal prime_factors(896680), [2, 5, 29, 773]
 assert_equal prime_factors(42), [2, 3, 7]
-eos
+code_block
                )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 8,
-               difficulty: 2,
-               title: "Pigs Fly;  Wait, No They Don't.",
-               instructions: 'Can you make a method return a differect value after a "return" is called?',
-               approved: true,
-               order_number: (order_number+=1),
-               tag_list: "exceptions",
-               code: <<-eos
+Problem.create!(difficulty: 2,
+                title: "Pigs Fly;  Wait, No They Don't.",
+                instructions: 'Can you make a method return a differect value after a "return" is called?',
+                approved: true,
+                order_number: (order_number+=1),
+                tag_list: "exceptions",
+                code: <<-code_block
 def do_pigs_fly?
   return true
   ___
 end
 
 assert_equal do_pigs_fly?, false
-               eos
+code_block
                )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 8,
-               difficulty: 2,
-               title: "Regular Expressions Revisted",
-               instructions: 'Parse this list into a two dimensional array where the inner array has a number and name.',
-               approved: true,
-               order_number: (order_number+=1),
-               tag_list: "regular expressions, strings, arrays",
-               code: <<-eos
+Problem.create!(difficulty: 2,
+                title: "Regular Expressions Revisted",
+                instructions: 'Parse this list into a two dimensional array where the inner array has a number and name.',
+                approved: true,
+                order_number: (order_number+=1),
+                tag_list: "regular expressions, strings, arrays",
+                code: <<-code_block
 doctor_map = "One: William Hartnell
 Two:Patrick Troughton
 Three:: Jon Pertwee
@@ -550,22 +537,21 @@ assert_equal doctors[4][0], "5"
 assert_equal doctors[7][0], "Eight"
 assert_equal doctors[9][1], "David Tennant"
 assert_equal doctors[10][1], "Matthew Robert Smith"
-eos
+code_block
                )
 
 ######################################################################################################################
 
-Problem.create!(#_id: 9,
-                  difficulty: 2,
-                  title: "Happy Numbers",
-                  instructions: "Happy numbers are positive integers that follow a particular formula: take each individual digit,
-                                 square it, and then sum the squares to get a new number. Repeat with the new number and eventually,
-                                 you might get to a number whose squared sum is 1. This is a happy number. An unhappy number (or
-                                 sad number) is one that loops endlessly. Write a function that determines if a number is happy or not.",
-                  approved: true,
-                  order_number: (order_number+=1),
-                  tag_list: "arithmetic",
-                  code: <<-code_block
+Problem.create!(difficulty: 2,
+                title: "Happy Numbers",
+                instructions: "Happy numbers are positive integers that follow a particular formula: take each individual digit,
+                               square it, and then sum the squares to get a new number. Repeat with the new number and eventually,
+                               you might get to a number whose squared sum is 1. This is a happy number. An unhappy number (or
+                               sad number) is one that loops endlessly. Write a function that determines if a number is happy or not.",
+                approved: true,
+                order_number: (order_number+=1),
+                tag_list: "arithmetic",
+                code: <<-code_block
  ___
 
  assert_equal happy_number?(7), true
@@ -573,7 +559,7 @@ Problem.create!(#_id: 9,
  assert_equal happy_number?(2), false
  assert_equal happy_number?(3), false
  code_block
-                 )
+               )
 
 ######################################################################################################################
 
@@ -589,10 +575,10 @@ Problem.create!(difficulty: 3,
                   a given card. Cards will be supplied in the format "2H" where two is the numeric value and H stands for hearts. Face value cards
                   will be of the format "AC" for ace of clubs, or "KS" for king of spades, etc. Results must contain two significant digits
                   after the decimal.},
-               tag_list: "probability, arithmetic",
-               approved: true,
-               order_number: (order_number+=1),
-               code: <<-code_block
+                tag_list: "probability, arithmetic",
+                approved: true,
+                order_number: (order_number+=1),
+                code: <<-code_block
 ___
 
 assert_equal first_trick.winning_probability("2C"), 0.00
@@ -602,4 +588,8 @@ assert_equal first_trick.winning_probability("9C"), 11.87
 assert_equal first_trick.winning_probability("2S"), 0.00
 assert_equal first_trick.winning_probability("AH"), 0.00
 code_block
-)
+               )
+
+Problem.asc(:order_number).all.each_cons(2) do |problem, next_problem|
+  problem.update_attribute :next_problem_id, next_problem.id
+end

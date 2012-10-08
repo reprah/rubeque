@@ -1,10 +1,10 @@
 class ProblemsController < ApplicationController
   # GET /problems
   # GET /problems.json
-  
+
   before_filter :restrict_to_admin, only: [:edit,:update,:destroy,:unapproved]
   before_filter :authenticate_user!, only: [:new]
-  
+
   def index
     @problems = Problem.approved.all
 
@@ -76,7 +76,7 @@ class ProblemsController < ApplicationController
       end
     end
   end
-  
+
   def approve
     @problem = Problem.find(params[:id])
     @problem.approved = true
@@ -129,7 +129,7 @@ class ProblemsController < ApplicationController
     def sort_column
       Problem.fields.keys.include?(params[:sort]) ? params[:sort] : :difficulty
     end
-    
+
     def sort_direction
       %w(asc desc).include?(params[:direction]) ? params[:direction] : :asc
     end
