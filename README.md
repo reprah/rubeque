@@ -2,6 +2,12 @@
 
 Rubeque is an interactive problem website for learning Ruby.
 
+## Contributing
+
+Anyone interested in contributing should check out
+the [Issues](https://github.com/SciMed/rubeque/issues) page for ideas
+on what to work on.
+
 ## Setup instructions for running locally
 
 * Download and install [rvm](http://beginrescueend.com/).
