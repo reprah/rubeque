@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 # gem install bundler --pre
 ruby "1.9.3"
 
-gem "rails", "~> 3.2.2"
+gem "rails", "~> 3.2.11"
 gem "bson_ext", "~> 1.5"
 gem "mongoid", "~> 2.4.12"
 gem "coderay", "~> 1.0.5"
