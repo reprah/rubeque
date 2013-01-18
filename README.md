@@ -5,7 +5,7 @@ Rubeque is an interactive problem website for learning Ruby.
 ## Contributing
 
 Anyone interested in contributing should check out
-the [Issues](https://github.com/daviddavis/rubeque/issues) page for ideas
+the [Issues](https://github.com/SciMed/rubeque/issues) page for ideas
 on what to work on.
 
 ## Setup instructions for running locally
