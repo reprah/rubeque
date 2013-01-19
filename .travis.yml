@@ -21,3 +21,6 @@ before_script:
 notifications:
   email:
     - rubeque@scimedsolutions.com
+
+services: mongodb
+
