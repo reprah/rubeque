@@ -1,4 +1,7 @@
-require 'debugger'
+# Add the following line back if you need debugger support
+# when troubleshooting cucumber tests:
+#
+# require 'debugger'
 
 Before('@javascript') do
   @javascript = true
