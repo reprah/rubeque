@@ -17,6 +17,8 @@ on what to work on.
 
         mongod
 * Run "bundle install" to install the necessary gems
+* Run `rake secret` and put the generated token in an environment variable
+  named SECRET\_TOKEN in your .bashrc (don't forget to source it!)
 * For the first time use, you will need to load the problem data. Run "rake db:seed"
 * Run `rails server`
 
