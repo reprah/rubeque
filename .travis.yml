@@ -24,3 +24,6 @@ notifications:
 
 services: mongodb
 
+env:
+  - SECRET_TOKEN='680bebab66e8203113df70e0e8ba9294ac87545b86037410e29ec48d2b05510c57d3809be50ed093774d4874b37b69342b6d04cfcfcb60c1b249daad726e551c'
+
