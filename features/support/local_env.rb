@@ -1,4 +1,4 @@
-require 'debugger'
+#require 'debugger'
 
 Before('@javascript') do
   @javascript = true
