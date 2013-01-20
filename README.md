@@ -1,4 +1,4 @@
-# Rubeque [![Build Status](https://secure.travis-ci.org/SciMed/rubeque.png)](http://travis-ci.org/SciMed/rubeque)
+# Rubeque [![Build Status](https://api.travis-ci.org/SciMed/rubeque.png?branch=develop)](https://api.travis-ci.org/SciMed/rubeque.png?branch=develop)
 
 Rubeque is an interactive problem website for learning Ruby.
 
