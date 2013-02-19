@@ -1,7 +1,6 @@
 Feature: User registration
   In order to allow users to record his or her solutions and score
-  a user
-  wants to register an acount
+  a user wants to register an acount
 
   Scenario: A user registers his or her account
     When I go to the home page
