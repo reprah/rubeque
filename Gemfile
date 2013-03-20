@@ -59,6 +59,7 @@ group :test, :development do
   gem 'launchy'
   gem 'awesome_print'
   gem 'interactive_editor'
+  gem 'selenium-webdriver'
 end
 
 group :development do
