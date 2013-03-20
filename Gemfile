@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 # gem install bundler --pre
 ruby "1.9.3"
 
-gem "rails", "~> 3.2.11"
+gem "rails", "~> 3.2.12"
 gem "bson_ext", "~> 1.5"
 gem "mongoid", "~> 2.4.12"
 gem "coderay", "~> 1.0.5"
@@ -59,6 +59,7 @@ group :test, :development do
   gem 'launchy'
   gem 'awesome_print'
   gem 'interactive_editor'
+  gem 'selenium-webdriver'
 end
 
 group :development do
