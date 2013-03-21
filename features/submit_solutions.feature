@@ -47,9 +47,10 @@ Feature: Submit solutions
     Then I should see a success message
     And there should be a new solution in the database
 
+  # Make sure user only accesses sicuro's fake ENV constant
   Scenario: A user tries to view ENV variables
     Given I am logged in as a user named "kierkegaard"
     When I go to the problem page for "Maximum"
-    And I fill in "raise ENV" for the solution code
+    And I fill in "ENV" for the solution code
     And I submit the solution
-    Then I should see a "uninitialized constant ENV" error message
+    Then I should see a "sicuro" error message
