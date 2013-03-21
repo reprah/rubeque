@@ -23,7 +23,7 @@ class CodeExecutor
 
   def execute
     timelimit = MAX_EXECUTION_TIME.to_i
-    memlimit  = 30
+    memlimit  = 200
 
     sandbox = Sicuro.new
     sandbox.setup(timelimit, memlimit)
