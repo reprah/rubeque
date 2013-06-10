@@ -26,7 +26,7 @@ on what to work on.
 
 * [David Davis](https://github.com/daviddavis) (daviddavis)
 * [Kamal Bennoune](https://github.com/kbennoune) (kbennoune)
-* [Joe Peck](https://github.com/joepeck) (joepeck)
+* [Joe Peck](https://github.com/fatcatt316) (fatcatt316)
 * [Michael Stalker](https://github.com/mstalker) (mstalker)
 * [Joseph Jaber](https://github.com/josephjaber) (josephjaber)
 * [Edward Anderson](https://github.com/nilbus) (nilbus)
