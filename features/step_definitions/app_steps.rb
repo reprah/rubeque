@@ -8,6 +8,7 @@ end
 
 Then /^I should see an? (success|error) message$/ do |type|
   element_css = type == "success" ? "div#notice" : "div#alert, div#error"
+  wait_until { page.find('div#flash') }
   within "div#flash" do
     page.all(element_css).count.should >= 1
   end
