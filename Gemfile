@@ -20,6 +20,7 @@ gem "uuid", "~> 2.3.5"
 gem "rack-timeout"
 gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
 gem "rubyheap", "~> 0.1.2"
+gem "trackman"
 gem "twitter"
 
 # omniauth gems
@@ -64,7 +65,7 @@ end
 
 group :development do
   # bash < <(curl -L https://raw.github.com/gist/1333785)
-  gem 'debugger'
+  #gem 'debugger'
   gem 'heroku'
   gem 'pry-rails'
 end
