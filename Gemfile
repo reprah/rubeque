@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'devise', '~> 2.0.4'
 gem "rinku"
 gem 'exception_notification', :require => 'exception_notifier'
-gem 'sicuro', '~> 0.3.0'
+gem 'sicuro', '~> 0.7.0'
 gem 'mongoid-history'
 gem 'kaminari'
 gem 'chosen-rails'
