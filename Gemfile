@@ -52,9 +52,9 @@ end
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.8"
-  # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
   gem 'launchy'
+  # Pretty printed test output
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'selenium-webdriver'
