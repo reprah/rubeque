@@ -50,9 +50,6 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
 group :test, :development do
   gem 'rspec-rails', "~> 2.8"
   # Pretty printed test output
@@ -64,8 +61,6 @@ group :test, :development do
 end
 
 group :development do
-  # bash < <(curl -L https://raw.github.com/gist/1333785)
-  #gem 'debugger'
   gem 'heroku'
   gem 'pry-rails'
 end
