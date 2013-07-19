@@ -13,6 +13,13 @@ on what to work on.
 * Download and install [rvm](http://beginrescueend.com/).
 * Download and install [mongodb](http://www.mongodb.org/).
 * Enter the rubeque directory from the command line and follow the rvm instructions to install ruby 1.9.3
+* To install debugger:
+
+  ```
+      gem install debugger-linecache -v '1.1.2' -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p429/
+      gem install ruby-debug19
+  ```
+
 * Start up your mongodb, if you don't have autostart:
 
         mongod
