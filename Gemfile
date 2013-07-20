@@ -62,7 +62,6 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'pry-rails'
 end
 
 group :test do
