@@ -48,7 +48,7 @@ class User
   has_many :following, inverse_of: :follower
   has_many :user_tokens, autosave: true, dependent: :destroy
 
-  index :score, :solution_count
+  index({score: 1, solution_count: 1}, {sparse: true})
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   attr_accessor :users_followed
