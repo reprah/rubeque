@@ -5,7 +5,6 @@ ruby '1.9.3'
 gem 'rails', '~> 3.2.12'
 
 gem 'aws-ses', '~> 0.4.4', :require => 'aws/ses'
-gem 'bson_ext', '~> 1.5'
 gem 'chosen-rails'
 gem 'coderay', '~> 1.0.5'
 gem 'devise', '~> 2.0.4'
