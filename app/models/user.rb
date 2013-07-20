@@ -7,6 +7,8 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   field :username
+  validates :username, presence: true, uniqueness: true
+
   field :email
   field :score, type: Integer
   field :solution_count, type: Integer
@@ -14,8 +16,9 @@ class User
 
   ## Devise fields
   ## Database authenticatable
-  field :email,              :type => String, :null => false
-  field :encrypted_password, :type => String, :null => false
+  field :email,              :type => String
+  field :encrypted_password, :type => String
+  validates :email, :encrypted_password, presence: true
 
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -46,9 +49,6 @@ class User
   references_many :user_tokens, autosave: true, dependent: :destroy
 
   index :score, :solution_count
-
-  validates_uniqueness_of :username
-  validates_presence_of :username
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   attr_accessor :users_followed

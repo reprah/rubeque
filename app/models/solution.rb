@@ -21,7 +21,7 @@ class Solution
   validates_uniqueness_of :problem_id, scope: :user_id,
     message: "solution error. Please do not use the back button in your browser before submitting a solution."
   after_destroy :update_user_solution_count
-  validates_presence_of :problem_id
+  validates :problem_id, presence: true
 
   paginates_per 5
 
