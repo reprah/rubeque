@@ -1,7 +1,4 @@
 class ProblemsController < ApplicationController
-  # GET /problems
-  # GET /problems.json
-  
   before_filter :restrict_to_admin, only: [:edit,:update,:destroy,:unapproved]
   before_filter :authenticate_user!, only: [:new]
   
@@ -22,8 +19,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /problems/1
-  # GET /problems/1.json
   def show
     @problem = Problem.find(params[:id]) rescue nil
     if @problem.nil? || (!@problem.approved? && !current_user_admin?)
@@ -43,8 +38,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /problems/new
-  # GET /problems/new.json
   def new
     @problem = Problem.new
 
@@ -54,13 +47,10 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /problems/1/edit
   def edit
     @problem = Problem.find(params[:id])
   end
 
-  # POST /problems
-  # POST /problems.json
   def create
     @problem = Problem.new(params[:problem])
     @problem.creator = current_user
@@ -91,8 +81,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # PUT /problems/1
-  # PUT /problems/1.json
   def update
     @problem = Problem.find(params[:id])
 
@@ -107,8 +95,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # DELETE /problems/1
-  # DELETE /problems/1.json
   def destroy
     @problem = Problem.find(params[:id])
     @problem.destroy
