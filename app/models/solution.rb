@@ -9,7 +9,7 @@ class Solution
 
   referenced_in :problem
   referenced_in :user
-  references_many :votes, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   index [:problem_id, :user_id]
 

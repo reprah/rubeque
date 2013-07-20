@@ -13,7 +13,7 @@ class Problem
   field :excluded_methods, type: Array
   field :order_number, type: Integer
 
-  references_many :solutions, dependent: :destroy
+  has_many :solutions, dependent: :destroy
   referenced_in :creator, class_name: "User"
   referenced_in :next_problem, class_name: "Problem"
   embeds_many :tags

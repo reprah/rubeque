@@ -42,11 +42,11 @@ class User
   field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
   field :locked_at,       :type => Time
 
-  references_many :solutions
-  references_many :votes
-  references_many :problems, inverse_of: :creator
-  references_many :following, inverse_of: :follower
-  references_many :user_tokens, autosave: true, dependent: :destroy
+  has_many :solutions
+  has_many :votes
+  has_many :problems, inverse_of: :creator
+  has_many :following, inverse_of: :follower
+  has_many :user_tokens, autosave: true, dependent: :destroy
 
   index :score, :solution_count
 
