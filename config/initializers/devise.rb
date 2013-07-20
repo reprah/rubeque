@@ -88,7 +88,7 @@ Devise.setup do |config|
 
   # If true, uses the password salt as remember token. This should be turned
   # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
+  # config.use_salt_as_remember_token = true
 
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
@@ -205,5 +205,5 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
 
   # Devise no longer manages the MongoDB schema for you
-  config.apply_schema = false
+  #config.apply_schema = false
 end
