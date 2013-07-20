@@ -52,7 +52,6 @@ class User
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   attr_accessor :users_followed
-  #attr_protected :provider, :uid, :name, :email
 
   after_create :initialize_score
 
