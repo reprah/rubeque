@@ -1,7 +1,7 @@
 class Problem
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::History::Trackable
+  include Mongoid::Audit::Trackable
   key :title
 
   field :title
@@ -14,8 +14,8 @@ class Problem
   field :order_number, type: Integer
 
   has_many :solutions, dependent: :destroy
-  referenced_in :creator, class_name: "User"
-  referenced_in :next_problem, class_name: "Problem"
+  belongs_to :creator, class_name: "User"
+  belongs_to :next_problem, class_name: "Problem"
   embeds_many :tags
 
   scope :approved, proc{ where(approved: true ) }

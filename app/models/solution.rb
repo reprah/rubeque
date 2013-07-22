@@ -1,17 +1,17 @@
 class Solution
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::History::Trackable
+  include Mongoid::Audit::Trackable
   field :code
   field :score, type: Integer
   field :time, type: Float
   field :cheating, type: Boolean
 
-  referenced_in :problem
-  referenced_in :user
+  belongs_to :problem
+  belongs_to :user
   has_many :votes, dependent: :destroy
 
-  index [:problem_id, :user_id]
+  index({problem_id: 1, user_id: 1}, {unique: true})
 
   scope :cheating, where(cheating: true)
   scope :not_cheating, any_in(cheating: [nil, false])

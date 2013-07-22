@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 #  before_filter :ensure_domain
   helper_method :current_user_admin?
-  around_filter Mongoid::History::Sweeper.instance
+  around_filter Mongoid::Audit::Sweeper.instance
   helper_method :root_path
 
 #  def ensure_domain

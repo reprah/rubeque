@@ -1,8 +1,8 @@
 class Vote
   include Mongoid::Document
   field :up, :type => Boolean
-  referenced_in :user
-  referenced_in :solution
+  belongs_to :user
+  belongs_to :solution
 
   index [:solution_id, :user_id]
 

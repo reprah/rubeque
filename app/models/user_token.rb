@@ -2,11 +2,11 @@ class UserToken
   # holds the provider authentication for users
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::History::Trackable
+  include Mongoid::Audit::Trackable
   field :provider, :type => String
   field :uid, :type => String
 
-  referenced_in :user
+  belongs_to :user
 
   validates_uniqueness_of :uid, scope: :provider
 
