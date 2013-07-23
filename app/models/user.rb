@@ -3,7 +3,7 @@ class User
   include Mongoid::Timestamps
   include Mongoid::Audit::Trackable
 
-  devise :database_authenticatable, :registerable, :omniauthable,
+  devise :database_authenticatable, :registerable, :lockable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   field :username
@@ -106,6 +106,10 @@ class User
     downvotes = solutions.map{|s| s.votes.where(:up => false)}.flatten
     difficulty_points = solutions.map{|s| s.problem.difficulty}.sum
     update_attribute(:score, upvotes.count - downvotes.count + difficulty_points)
+  end
+
+  def failed_attempts
+    self['failed_attempts'] || 0
   end
 
   def users_followed
