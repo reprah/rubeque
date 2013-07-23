@@ -44,7 +44,7 @@ development:
 
     # Preload all models in development, needed when models use
     # inheritance. (default: false)
-    # preload_models: false
+    preload_models: false
 
     # Protect id and type from mass assignment. (default: true)
     # protect_sensitive_fields: true
@@ -78,3 +78,9 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+
+staging:
+  uri: <%= ENV['MONGOHQ_URL'] %>

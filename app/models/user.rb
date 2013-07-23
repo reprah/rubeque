@@ -3,7 +3,7 @@ class User
   include Mongoid::Timestamps
   include Mongoid::Audit::Trackable
 
-  devise :database_authenticatable, :registerable, :lockable, :omniauthable,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   field :username
