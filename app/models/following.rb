@@ -4,5 +4,5 @@ class Following
   belongs_to :user
   belongs_to :follower, class_name: "User"
 
-  index [:follower_id, :user_id]
+  index({follower_id: 1, user_id: 1}, { sparse: true })
 end

@@ -7,7 +7,7 @@ gem 'rails', '~> 3.2.12'
 gem 'aws-ses', '~> 0.4.4', :require => 'aws/ses'
 gem 'chosen-rails'
 gem 'coderay', '~> 1.0.5'
-gem 'devise', '~> 2.0'
+gem 'devise'
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'fakefs', :require => 'fakefs/safe'
 gem 'jquery-rails'
@@ -40,9 +40,11 @@ end
 
 group :test, :development do
   # Pretty printed test output
+  gem 'debugger'
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'launchy'
+  gem 'letter_opener'
   gem 'rspec-rails', '~> 2.8'
   gem 'selenium-webdriver'
   gem 'turn', '0.8.2', :require => false

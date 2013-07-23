@@ -2,9 +2,10 @@ class Problem
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Audit::Trackable
-  key :title
 
   field :title
+  field :_id, type: String, default: ->{ title.to_s.parameterize }
+
   field :instructions
   field :code
   field :hidden_code
