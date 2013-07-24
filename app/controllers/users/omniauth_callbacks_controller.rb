@@ -29,7 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         puts 'getting omniauth'
         if current_user
           puts 'getting current user'
-          current_user.user_tokens.find_or_create_by provider: uomniauth['provider'], id: omniauth['uid']
+          current_user.user_tokens.find_or_create_by provider: omniauth['provider'], id: omniauth['uid']
            flash[:notice] = "Authentication successful"
            redirect_to edit_user_registration_path
         else
