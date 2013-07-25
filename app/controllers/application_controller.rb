@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_admin?
-  around_filter Mongoid::History::Sweeper.instance
+  around_filter Mongoid::Audit::Sweeper.instance
   helper_method :root_path
 
   protected
