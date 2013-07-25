@@ -32,7 +32,7 @@
 </div>
 <div class="clear"></div>
 
-<% if solution = Solution.first(conditions: { user_id: current_user.id, problem_id: @problem.id }) %>
+<% if solution = Solution.where(user_id: current_user.id, problem_id: @problem.id).first %>
   <hr/>
   <div class="solution" id="your-solution">
     <%= render solution, title: "Your Solution" %>
