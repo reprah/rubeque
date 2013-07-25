@@ -1,10 +1,9 @@
 Then /^I should be on the problem page for "([^"]*)"$/ do |title|
-  visit problem_path(Problem.first(conditions: {title: title}))
+  visit problem_path(Problem.where({title: title}).first)
 end
 
 When /I go to the problems page/ do
   visit problems_path
-  #debugger
   1
 end
 
@@ -39,7 +38,7 @@ Given /^there is a problem with title "([^"]*)"$/ do |title|
 end
 
 Given /^the problem "([^"]*)" is followed by "([^"]*)"$/ do |title_1, title_2|
-  problem_1 = Problem.first(conditions: {title: title_1})
-  problem_1.next_problem = Problem.first(conditions: {title: title_2})
+  problem_1 = Problem.where({title: title_1}).first
+  problem_1.next_problem = Problem.where({title: title_2}).first
   problem_1.save!
 end

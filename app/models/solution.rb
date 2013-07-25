@@ -1,17 +1,17 @@
 class Solution
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::History::Trackable
+  include Mongoid::Audit::Trackable
   field :code
   field :score, type: Integer
   field :time, type: Float
   field :cheating, type: Boolean
 
-  referenced_in :problem
-  referenced_in :user
-  references_many :votes, dependent: :destroy
+  belongs_to :problem
+  belongs_to :user
+  has_many :votes, dependent: :destroy
 
-  index [:problem_id, :user_id]
+  index({problem_id: 1, user_id: 1}, {unique: true})
 
   scope :cheating, where(cheating: true)
   scope :not_cheating, any_in(cheating: [nil, false])
@@ -21,7 +21,7 @@ class Solution
   validates_uniqueness_of :problem_id, scope: :user_id,
     message: "solution error. Please do not use the back button in your browser before submitting a solution."
   after_destroy :update_user_solution_count
-  validates_presence_of :problem_id
+  validates :problem_id, presence: true
 
   paginates_per 5
 

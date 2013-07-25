@@ -35,7 +35,7 @@ Given /^I am logged in as an? (user|admin) named "([^"]*)"$/ do |user_type, user
   step %Q{I fill in my username}
   step %Q{I fill in my password}
   step %Q{I press the login button}
-  @current_user = User.first(conditions: {username: username})
+  @current_user = User.where(username: username).first
 end
 
 Given /^there is an? (admin|user) account named "([^"]*)"$/ do |user_type, username|

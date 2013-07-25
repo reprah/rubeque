@@ -39,8 +39,8 @@ When /^I fill in a regex date solution$/ do
 end
 
 Given /^the user "([^"]*)" correctly solved problem "([^"]*)"$/ do |username, title|
-  user = User.first(conditions: {username: username})
-  problem = Problem.first(conditions: {title: title})
+  user = User.where({username: username}).first
+  problem = Problem.where({title: title}).first
   solution = Solution.new
   solution.user = user
   solution.problem = problem

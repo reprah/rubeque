@@ -1,10 +1,11 @@
 class Problem
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::History::Trackable
-  key :title
+  include Mongoid::Audit::Trackable
 
   field :title
+  field :_id, type: String, default: ->{ title.to_s.parameterize }
+
   field :instructions
   field :code
   field :hidden_code
@@ -13,9 +14,9 @@ class Problem
   field :excluded_methods, type: Array
   field :order_number, type: Integer
 
-  references_many :solutions, dependent: :destroy
-  referenced_in :creator, class_name: "User"
-  referenced_in :next_problem, class_name: "Problem"
+  has_many :solutions, dependent: :destroy
+  belongs_to :creator, class_name: "User"
+  belongs_to :next_problem, class_name: "Problem"
   embeds_many :tags
 
   scope :approved, proc{ where(approved: true ) }
