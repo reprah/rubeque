@@ -89,8 +89,7 @@ production:
       database: rubeque
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
-      hosts:
-        - <%= ENV['MONGOHQ_URL'] %>
+      uri: <%= ENV['MONGOHQ_URL'] %>
       options:
         # Change whether the session persists in safe mode by default.
         # (default: false)
