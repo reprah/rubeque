@@ -14,9 +14,6 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'mongoid'
 gem 'mongoid-audit'
-gem "uuid", "~> 2.3.5"
-gem "rack-timeout"
-gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
