@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/mongoid/mongoid
+  revision: 367fc3f066252c839e04710e1ea5682aae33e6c2
+  ref: 367fc3f066252c839e04710e1ea5682aae33e6c2
+  specs:
+    mongoid (3.1.4)
+      activemodel (~> 3.2)
+      moped (~> 1.4)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -132,15 +143,10 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    mongoid (3.1.4)
-      activemodel (~> 3.2)
-      moped (~> 1.4)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.22)
     mongoid-audit (0.1.7)
       easy_diff
       mongoid (>= 3.0.0)
-    moped (1.5.0)
+    moped (1.5.1)
     multi_json (1.7.7)
     multi_xml (0.5.1)
     multipart-post (1.1.5)
@@ -298,7 +304,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
-  mongoid
+  mongoid (>= 3.1.0)!
   mongoid-audit
   newrelic_rpm
   omniauth
