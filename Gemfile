@@ -12,11 +12,8 @@ gem 'exception_notification', :require => 'exception_notifier'
 gem 'fakefs', :require => 'fakefs/safe'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'mongoid'
+gem 'mongoid', '>= 3.1.0', :git => "git://github.com/mongoid/mongoid", :ref => "367fc3f066252c839e04710e1ea5682aae33e6c2"
 gem 'mongoid-audit'
-gem "uuid", "~> 2.3.5"
-gem "rack-timeout"
-gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
