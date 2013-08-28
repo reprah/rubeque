@@ -83,6 +83,10 @@ production:
   sessions:
     default:
       uri: <%= ENV['MONGOHQ_URL'] %>
+    options:
+      # We don't have secondaries so don't try other nodes
+      consistency: :strong
+      safe: true
 
 staging:
   sessions:
