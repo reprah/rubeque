@@ -101,10 +101,20 @@ class User
     end
   end
 
+  def sum_difficulty_points
+    points = solutions.map{|s| s.problem.difficulty}.sum || 0
+  end
+
+  def upvotes
+    solutions.map{|s| s.votes.where(:up => true)}.flatten
+  end
+
+  def downvotes
+    solutions.map{|s| s.votes.where(:up => false)}.flatten
+  end
+
   def update_score
-    upvotes = solutions.map{|s| s.votes.where(:up => true)}.flatten
-    downvotes = solutions.map{|s| s.votes.where(:up => false)}.flatten
-    difficulty_points = solutions.map{|s| s.problem.difficulty}.sum
+    difficulty_points = Moped::retry_connection { sum_difficulty_points }
     update_attribute(:score, upvotes.count - downvotes.count + difficulty_points)
   end
 
@@ -125,7 +135,6 @@ class User
   end
 
   protected
-
     def initialize_score
       self.score = 0
       self.save
