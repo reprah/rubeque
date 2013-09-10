@@ -505,7 +505,7 @@ eos
 Problem.create!(#_id: 8,
                difficulty: 2,
                title: "Pigs Fly;  Wait, No They Don't.",
-               instructions: 'Can you make a method return a differect value after a "return" is called?',
+               instructions: 'Can you make a method return a different value after a "return" is called?',
                approved: true,
                order_number: (order_number+=1),
                tag_list: "exceptions",
