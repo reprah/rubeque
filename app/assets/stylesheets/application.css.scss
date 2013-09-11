@@ -118,8 +118,8 @@ hr {
 
 .rss {
   padding-left: 22px;
-  background-size: 20px;
-  background: url("/assets/rss.png") no-repeat 0 0; }
+  background: url("/assets/rss.png") no-repeat 0 0;
+  background-size: contain; }
 
 table {
   $background: #ebebeb;
