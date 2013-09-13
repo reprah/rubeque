@@ -21,6 +21,10 @@ $ ->
     $("form#new_solution, form.edit_solution").submit (e) ->
       $.each editors, (index, editor) ->
         $(editor.container).prev("textarea").val editor.getSession().getValue()
+    .find('textarea').keydown((e)->
+      if (e.ctrlKey && e.keyCode == 13)
+        $(@).parents('form').submit()
+    )
 
     $("form#new_problem, form.edit_problem").submit (e) ->
       $.each editors, (index, editor) ->
