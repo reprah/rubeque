@@ -1,7 +1,7 @@
 Rubeque::Application.routes.draw do
   resources :following, only: [:create, :destroy]
 
-  resources :votes
+  resources :votes, only: [:create, :show]
 
   resources :users, only: :index
 
