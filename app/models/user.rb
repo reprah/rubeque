@@ -106,11 +106,11 @@ class User
   end
 
   def upvotes
-    solutions.map{|s| s.votes.where(:up => true)}.flatten
+    solutions.includes(:votes).map{ |s| s.votes }.flatten.select{ |v| v.up == true }
   end
 
   def downvotes
-    solutions.map{|s| s.votes.where(:up => false)}.flatten
+    solutions.includes(:votes).map{ |s| s.votes }.flatten.select{ |v| v.up == false }
   end
 
   def update_score

@@ -82,7 +82,10 @@ class Solution
   protected
 
     def create_upvote_for_solution
-      self.votes.create(:user => user, :up => true) if user
+      self.votes.create!(:user => user, :up => true) if user
+    rescue StandardError => error  
+      self.destroy
+      raise error
     end
 
     def update_user_solution_count

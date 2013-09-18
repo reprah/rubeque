@@ -140,6 +140,7 @@ ___
 assert_equal twenty_one?(3, 4, 5, 6, 3), true
 assert_equal twenty_one?(3, 11, 10), false
 assert_equal twenty_one?(10, 11), true
+assert_equal twenty_one?(10, 10), false
 code_block
                )
 
@@ -505,7 +506,7 @@ eos
 Problem.create!(#_id: 8,
                difficulty: 2,
                title: "Pigs Fly;  Wait, No They Don't.",
-               instructions: 'Can you make a method return a differect value after a "return" is called?',
+               instructions: 'Can you make a method return a different value after a "return" is called?',
                approved: true,
                order_number: (order_number+=1),
                tag_list: "exceptions",
