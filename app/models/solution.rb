@@ -83,7 +83,9 @@ class Solution
 
     def create_upvote_for_solution
       self.votes.create!(:user => user, :up => true) if user
-    rescue StandardError => error  
+      user.update_score
+      update_score
+    rescue StandardError => error
       self.destroy
       raise error
     end
