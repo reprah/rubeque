@@ -79,12 +79,23 @@ class Solution
     self.code.gsub(/\s/, "").length
   end
 
+  def self.top_solutions(problem, user, page)
+    Solution.where(problem_id: problem.id, user_id: { "$nin" => [user.id] }).
+    desc(:score).desc(:updated_at).page(page)
+  end
+
+  def self.bottom_solutions(problem, page)
+    Solution.where(problem_id: problem.id).asc(:score).limit(3).page(page)
+  end
+
   protected
 
     def create_upvote_for_solution
-      self.votes.create!(:user => user, :up => true) if user
-      user.update_score
-      update_score
+      if user
+        self.votes.create!(:user => user, :up => true) unless user.skipped_problems[problem.id]
+        user.update_score
+        update_score
+      end
     rescue StandardError => error
       self.destroy
       raise error

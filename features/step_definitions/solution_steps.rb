@@ -46,5 +46,17 @@ Given /^the user "([^"]*)" correctly solved problem "([^"]*)"$/ do |username, ti
   solution.problem = problem
   solution.save(validate: false)
 end
+ 
+Then /^my score should (be|not be) increased$/ do |score|
+  user = User.first
+  if score =~ /^not/
+    user.score.should eq 0
+  else
+    user.score.should_not eq 0
+  end
+end
 
-
+When /^I try to view solutions for "(.*?)"$/ do |title|
+  problem = Problem.where({title: title}).first
+  visit problem_solutions_path(problem.id)
+end

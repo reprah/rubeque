@@ -6,12 +6,11 @@ class SolutionsController < ApplicationController
 
   def index
     @problem = Problem.find(params[:problem_id]) rescue (redirect_to "/" and return)
-    if !current_user_admin? && (@problem.nil? || !@problem.solved?(current_user))
+    if current_user && @problem
+      @solutions, @followed_solutions = SolutionService.new(user: current_user, problem: @problem, page: params[:page]).solutions
+    else
       redirect_to @problem and return
     end
-    @top_solutions = Solution.where(problem_id: @problem.id, user_id: { "$nin" => [current_user.id] }).
-      desc(:score).desc(:updated_at).page(params[:page] || 1)
-    @followed_solutions = current_user.users_followed.map {|u| u.solutions.where(problem_id: @problem.id).first}.compact
 
     respond_to do |format|
       format.html # index.html.erb

@@ -13,6 +13,7 @@ class User
   field :score, type: Integer
   field :solution_count, type: Integer
   field :admin, type: Boolean
+  field :skipped_problems, type: Hash, default: {}
 
   ## Devise fields
   ## Database authenticatable

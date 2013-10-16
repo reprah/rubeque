@@ -1,26 +1,28 @@
 <h1>Solutions for <%= link_to "#{truncate(@problem.to_s, length: 30)}", @problem %></h1>
 
-<% if @top_solutions.current_page == 1 %>
-  <h2 style="margin-top: 1.5em">People You Follow</h2>
+<% if @solutions.current_page == 1 %>
+  <% if @followed_solutions %>
+    <h2 style="margin-top: 1.5em">People You Follow</h2>
 
-  <div class="solutions">
-    <% if @followed_solutions.any? %>
-      <% @followed_solutions.each do |solution| %>
-        <div class="solution">
-          <%= render solution %>
-        </div>
+    <div class="solutions">
+      <% if @followed_solutions.any? %>
+        <% @followed_solutions.each do |solution| %>
+          <div class="solution">
+            <%= render solution %>
+          </div>
+        <% end -%>
+      <% else %>
+        <p>None of the people you follow have solved this problem.</p>
       <% end -%>
-    <% else %>
-      <p>None of the people you follow have solved this problem.</p>
-    <% end -%>
-  </div>
+    </div>
+  <% end -%>
 
   <hr/>
-  <h2>Top Solutions</h2>
+  <h2>Solutions</h2>
 <% end %>
 
 <div class="solutions">
-  <% @top_solutions.each do |solution| %>
+  <% @solutions.each do |solution| %>
 
     <div class="solution">
       <%= render solution %>
@@ -28,7 +30,7 @@
 
   <% end -%>
 
-  <%= paginate @top_solutions %>
+  <%= paginate @solutions %>
 </div>
 <div class="clear"></div>
 

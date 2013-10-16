@@ -61,9 +61,9 @@
 
 <h2>Your Solution</h2>
 
-<% if @problem.solved?(current_user) || current_user_admin? %>
+<% if current_user %>
   <p id="solutions-link">
-    <%= link_to "View Solutions", problem_solutions_path(:problem_id => @problem.id) %>
+    <%= link_to "View Solutions", problem_solutions_path(:problem_id => @problem.id), confirm: @solved ? nil : "Warning! You can view a few solutions if you're stuck, but that means you won't earn automatic points for submitting a correct answer. Continue?" %>
   </p>
 <% end -%>
 

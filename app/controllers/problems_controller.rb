@@ -26,6 +26,8 @@ class ProblemsController < ApplicationController
       redirect_to root_path and return
     end
 
+    @solved = @problem.solved?(current_user) if current_user
+
     @solution = if current_user && (solution =  @problem.solutions.where(user_id: current_user.id).first)
       solution
     else
