@@ -2,7 +2,7 @@ class SolutionService
   def initialize(args={})
     @user = args.fetch(:user)
     @problem = args.fetch(:problem)
-    @page = args.fetch(:page) || 1
+    @page = args.fetch(:page, 1)
   end
 
   def solutions

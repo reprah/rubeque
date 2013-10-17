@@ -49,4 +49,10 @@ describe SolutionService do
       end
     end
   end
+
+  describe 'instantiation' do
+    it 'allows the page parameter to be omitted' do
+      expect(SolutionService.new(user: user, problem: problem)).to_not raise_error(KeyError)
+    end
+  end
 end
